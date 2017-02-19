@@ -12,6 +12,8 @@
 		84CE690B1E598CB2009E0234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE69091E598CB2009E0234 /* Main.storyboard */; };
 		84CE690D1E598CB2009E0234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CE690C1E598CB2009E0234 /* Assets.xcassets */; };
 		84CE69101E598CB2009E0234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE690E1E598CB2009E0234 /* LaunchScreen.storyboard */; };
+		84CE69211E59934E009E0234 /* CPAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE691F1E59934E009E0234 /* CPAlert.storyboard */; };
+		84CE69221E59934E009E0234 /* CPAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE69201E59934E009E0234 /* CPAlertVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		84CE690C1E598CB2009E0234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CE690F1E598CB2009E0234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CE69111E598CB2009E0234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84CE691F1E59934E009E0234 /* CPAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CPAlert.storyboard; sourceTree = "<group>"; };
+		84CE69201E59934E009E0234 /* CPAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAlertVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		84CE69041E598CB2009E0234 /* CPAlertViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84CE691E1E59934E009E0234 /* CPAlertViewControllerSource */,
 				84CE69051E598CB2009E0234 /* AppDelegate.swift */,
 				84CE69071E598CB2009E0234 /* ViewController.swift */,
 				84CE69091E598CB2009E0234 /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				84CE69111E598CB2009E0234 /* Info.plist */,
 			);
 			path = CPAlertViewController;
+			sourceTree = "<group>";
+		};
+		84CE691E1E59934E009E0234 /* CPAlertViewControllerSource */ = {
+			isa = PBXGroup;
+			children = (
+				84CE691F1E59934E009E0234 /* CPAlert.storyboard */,
+				84CE69201E59934E009E0234 /* CPAlertVC.swift */,
+			);
+			path = CPAlertViewControllerSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CE69211E59934E009E0234 /* CPAlert.storyboard in Resources */,
 				84CE69101E598CB2009E0234 /* LaunchScreen.storyboard in Resources */,
 				84CE690D1E598CB2009E0234 /* Assets.xcassets in Resources */,
 				84CE690B1E598CB2009E0234 /* Main.storyboard in Resources */,
@@ -138,6 +153,7 @@
 			files = (
 				84CE69081E598CB2009E0234 /* ViewController.swift in Sources */,
 				84CE69061E598CB2009E0234 /* AppDelegate.swift in Sources */,
+				84CE69221E59934E009E0234 /* CPAlertVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
