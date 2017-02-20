@@ -8,6 +8,6 @@ A way to create a custom alert view with animation. Easy custom any other alert 
 
 - [@ctphong94@gmail.com]
 
-## License
+# License
 
 `CPAlertViewController` is available under the MIT license. See the LICENSE file for more info.
