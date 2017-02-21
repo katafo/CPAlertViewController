@@ -42,7 +42,7 @@ alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
 
 */
 
-alertVC = CPAlertVC.show(in: self, title: "Boucne Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
+alertVC = CPAlertVC.show(in: self, title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
 
 ```
 
