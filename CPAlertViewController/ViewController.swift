@@ -27,7 +27,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openAlertWithAction(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.", posTitle: "OK", negTitle: "CANCEL", posAction: #selector(tapOkAction), negAction: #selector(tapCancelAction), alertType: .confirm)
+        alertVC = CPAlertVC.show(in: self, title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
+        alertVC.addAction(CPAlertAction(title: "OK", type: .normal, handler: {
+            print("Tapped OK button")
+        }))
+        alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
     }
     
     @IBAction func openAlertWithScaleAnimation(_ sender: Any) {
@@ -41,18 +45,6 @@ class ViewController: UIViewController {
     }
     @IBAction func openAlertWithBounceDownAniamtion(_ sender: Any) {
         alertVC = CPAlertVC.show(in: self, title: "Boucne Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
-    }
-    
-    //MARK: - ALERT ACTION
-    
-    func tapOkAction(){
-        print("Tapped ok button !")
-        alertVC.dismiss(animated: true, completion: nil)
-    }
-    
-    func tapCancelAction(){
-        print("Tapped cancel button !")
-        alertVC.dismiss(animated: true, completion: nil)
     }
     
 }

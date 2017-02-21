@@ -42,6 +42,9 @@
                                         <state key="normal" title="Got it!">
                                             <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapPositiveButton:" destination="dCt-ek-PRZ" eventType="touchUpInside" id="uaT-yA-wch"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2P-Yx-UkV">
                                         <rect key="frame" x="190" y="81" width="48" height="38"/>
@@ -49,6 +52,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapNegativeButton:" destination="dCt-ek-PRZ" eventType="touchUpInside" id="Zmr-IU-FuG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

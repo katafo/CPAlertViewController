@@ -38,6 +38,9 @@ class CPAlertVC: UIViewController {
     let scaleY: CGFloat = 1.5
     let rotateRadian:CGFloat = 1.5 // 1 rad = 57 degrees
     
+    private var negHandler: CPAlertActionHandler?
+    private var posHandler: CPAlertActionHandler?
+        
     //MARK: - LIFECYCLE
     
     override func viewDidLoad() {
@@ -50,7 +53,7 @@ class CPAlertVC: UIViewController {
     
     //MARK: - CONFIG
     
-    class func show(in viewController: UIViewController, title: String, message: String, posTitle: String = "Got it!", negTitle: String = "Cancel", posAction: Selector? = nil, negAction: Selector? = nil,alertType: CPAlertType = .notice, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
+    class func show(in viewController: UIViewController, title: String, message: String, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
         
         let alertStoryboard = UIStoryboard(name: "CPAlert", bundle: nil)
         let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CPAlertVC") as! CPAlertVC
@@ -63,18 +66,7 @@ class CPAlertVC: UIViewController {
             alertVC.startAnimated(type: animationType)
             alertVC.titleLabel.text = title
             alertVC.messageLabel.text = message
-            
-            alertVC.posButton.setTitle(posTitle, for: .normal)
-            alertVC.negButton.setTitle(negTitle, for: .normal)
-            
-            if alertType == .notice{
-                alertVC.negButton.isHidden = true
-            }else{
-                alertVC.negButton.isHidden = false
-            }
-
-            alertVC.configButtonAction(in: viewController, posAction: posAction, negAction: negAction)
-
+        
         })
         
         return alertVC
@@ -102,26 +94,31 @@ class CPAlertVC: UIViewController {
         
     }
     
-    func configButtonAction(in viewController: UIViewController, posAction: Selector?, negAction: Selector?){
-        
-        if let posAction = posAction{
-            posButton.addTarget(viewController, action: posAction, for: .touchUpInside)
-        }else{
-            posButton.addTarget(self, action: #selector(dismiss(_:)), for: .touchUpInside)
+    func addAction(_ action: CPAlertAction){
+        switch action.type{
+        case .normal:
+            posButton.setTitle(action.title, for: .normal)
+            posHandler = action.handler
+        case .cancel:
+            negButton.isHidden = false
+            negButton.setTitle(action.title, for: .normal)
+            negHandler = action.handler
         }
-        
-        if let negAction = negAction{
-            negButton.addTarget(viewController, action: negAction, for: .touchUpInside)
-        }else{
-            negButton.addTarget(self, action: #selector(dismiss(_:)), for: .touchUpInside)
-        }
-        
     }
     
     //MARK: - ACTION
-
-    func dismiss(_ sender: Any){
+    
+    @IBAction func tapPositiveButton(_ sender: Any) {
+        if let posHandler = posHandler{
+            posHandler()
+        }
         dismiss(animated: true, completion: nil)
     }
-    
+    @IBAction func tapNegativeButton(_ sender: Any) {
+        if let negHandler = negHandler{
+            negHandler()
+        }
+        dismiss(animated: true, completion: nil)
+
+    }
 }
