@@ -13,37 +13,18 @@ A way to create a custom alert view with animation. Easy custom any other alert 
 
 var alertVC: CPAlertVC!
 
-/** Default alert */
-
 alertVC = CPAlertVC.show(in: self, title: "Normal Alert", message: "Normal alert will have only one button.")
 
 ```
 - Alert with action
 
 ```swift
-/** Alert With Action
 
-    posTitle: Title for positive button
-    negTitle: Title for negative button
-    posAction: Use selector to add positive action
-    negAction: Use selector to add negative action
-    alertType: Default is ".notice", change to ".confirm" if you want to show 2 button.
-     
-*/
-
-alertVC = CPAlertVC.show(in: self, title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.", posTitle: "OK", negTitle: "CANCEL", posAction: #selector(tapOkAction), negAction: #selector(tapCancelAction), alertType: .confirm)
-
-//Alert action
-
-func tapOkAction(){
-        print("Tapped ok button !")
-        alertVC.dismiss(animated: true, completion: nil)
-    }
-    
-func tapCancelAction(){
-    print("Tapped cancel button !")
-    alertVC.dismiss(animated: true, completion: nil)
-}
+alertVC = CPAlertVC.show(in: self, title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
+alertVC.addAction(CPAlertAction(title: "OK", type: .normal, handler: {
+    print("Tapped OK button")
+}))
+alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
     
 ```
 - Alert with other animation
