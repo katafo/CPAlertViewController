@@ -13,14 +13,14 @@ A way to create a custom alert view with animation. Easy custom any other alert 
 
 var alertVC: CPAlertVC!
 
-alertVC = CPAlertVC.show(in: self, title: "Normal Alert", message: "Normal alert will have only one button.")
+alertVC = CPAlertVC.show(title: "Normal Alert", message: "Normal alert will have only one button.")
 
 ```
 - Alert with action
 
 ```swift
 
-alertVC = CPAlertVC.show(in: self, title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
+alertVC = CPAlertVC.show(title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
 alertVC.addAction(CPAlertAction(title: "OK", type: .normal, handler: {
     print("Tapped OK button")
 }))
@@ -42,7 +42,7 @@ alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
 
 */
 
-alertVC = CPAlertVC.show(in: self, title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
+alertVC = CPAlertVC.show(title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
 
 ```
 
