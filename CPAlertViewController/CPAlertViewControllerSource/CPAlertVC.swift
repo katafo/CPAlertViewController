@@ -53,7 +53,9 @@ class CPAlertVC: UIViewController {
     
     //MARK: - CONFIG
     
-    class func show(in viewController: UIViewController, title: String, message: String, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
+    class func show(title: String, message: String, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
+        
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
         
         let alertStoryboard = UIStoryboard(name: "CPAlert", bundle: nil)
         let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CPAlertVC") as! CPAlertVC
@@ -61,7 +63,7 @@ class CPAlertVC: UIViewController {
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext
         
-        viewController.present(alertVC, animated: false, completion: {
+        rootVC?.present(alertVC, animated: false, completion: {
             
             alertVC.startAnimated(type: animationType)
             alertVC.titleLabel.text = title
