@@ -41,10 +41,10 @@ class ViewController: UIViewController {
         alertVC = CPAlertVC.show(title: "Rotate Animation", message: "Rotate ~90 degrees = 1.5 rad (1 rad = 57 degrees), you can change it in CPAlertVC.swift.", animationType: .rotate)
     }
     @IBAction func openAlertWithBounceUpAnimation(_ sender: Any) {
-        alertVC = CPAlertVC.show(title: "Boucne Up Animation", message: "Animating alert from bottom view to top view", animationType: .bounceUp)
+        alertVC = CPAlertVC.show(title: "Bounce Up Animation", message: "Animating alert from bottom view to top view", animationType: .bounceUp)
     }
     @IBAction func openAlertWithBounceDownAniamtion(_ sender: Any) {
-        alertVC = CPAlertVC.show(title: "Boucne Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
+        alertVC = CPAlertVC.show(title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
     }
     
 }
