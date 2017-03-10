@@ -15,11 +15,6 @@ enum CPAlertAnimationType{
     case bounceDown
 }
 
-enum CPAlertType{
-    case notice
-    case confirm
-}
-
 class CPAlertVC: UIViewController {
 
     //MARK: - DECLARE
