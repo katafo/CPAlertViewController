@@ -15,11 +15,6 @@ enum CPAlertAnimationType{
     case bounceDown
 }
 
-enum CPAlertType{
-    case notice
-    case confirm
-}
-
 class CPAlertVC: UIViewController {
 
     //MARK: - DECLARE
@@ -31,7 +26,8 @@ class CPAlertVC: UIViewController {
     @IBOutlet weak var posButton: UIButton!
     @IBOutlet weak var negButton: UIButton!
     
-    let backgroundOpacity: Float = 0.5
+    let backgroundColor: UIColor = .black
+    let backgroundOpacity: CGFloat = 0.5
     let animateDuration: TimeInterval = 1.0
     
     let scaleX: CGFloat = 0.3
@@ -48,7 +44,7 @@ class CPAlertVC: UIViewController {
         alertView.alpha = 0
         alertView.layer.cornerRadius = 4
         negButton.isHidden = true
-        view.backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: backgroundOpacity)
+        view.backgroundColor = backgroundColor.withAlphaComponent(backgroundOpacity)
     }
     
     //MARK: - CONFIG
