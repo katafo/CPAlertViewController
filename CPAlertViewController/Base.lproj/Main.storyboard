@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="62R-z8-MWN">
-                                <rect key="frame" x="85" y="183.5" width="150" height="86"/>
+                                <rect key="frame" x="84" y="183.5" width="152" height="134"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVS-6B-w3V">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                         <state key="normal" title="Normal alert">
@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7E-BM-RNi">
-                                        <rect key="frame" x="0.0" y="48" width="150" height="38"/>
+                                        <rect key="frame" x="0.0" y="48" width="152" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                         <state key="normal" title="Confirm alert">
@@ -45,6 +45,17 @@
                                         </state>
                                         <connections>
                                             <action selector="openAlertWithAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajl-Xm-8OO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1B-zN-eNA">
+                                        <rect key="frame" x="0.0" y="96" width="152" height="38"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
+                                        <state key="normal" title="Custom Style">
+                                            <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openCustomStyleAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cbc-Al-zn9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -56,27 +67,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gA-pc-5uS">
-                                <rect key="frame" x="100.5" y="294.5" width="119.5" height="20.5"/>
+                                <rect key="frame" x="100.5" y="342.5" width="119.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-fk-kg0">
-                                <rect key="frame" x="83" y="335" width="155" height="182"/>
+                                <rect key="frame" x="83" y="383" width="155" height="134"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGi-oQ-19C">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="38"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
-                                        <state key="normal" title="Scale">
-                                            <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="openAlertWithScaleAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWi-xW-iEW"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct1-on-NSr">
-                                        <rect key="frame" x="0.0" y="48" width="155" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                         <state key="normal" title="Rotate">
@@ -87,7 +87,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4P-VT-dnu">
-                                        <rect key="frame" x="0.0" y="96" width="155" height="38"/>
+                                        <rect key="frame" x="0.0" y="48" width="155" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                         <state key="normal" title="Bounce Up">
@@ -98,7 +98,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nO-iq-axx">
-                                        <rect key="frame" x="0.0" y="144" width="155" height="38"/>
+                                        <rect key="frame" x="0.0" y="96" width="155" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                         <state key="normal" title="Bounce Down">
@@ -137,10 +137,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--AlertVC-->
+        <!--Custom AlertVC-->
         <scene sceneID="9RS-r1-GKN">
             <objects>
-                <viewController storyboardIdentifier="CPAlertVC" id="51a-kv-EiD" customClass="CPAlertVC" customModule="CPAlertViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomAlertVC" id="51a-kv-EiD" customClass="CustomAlertVC" customModule="CPAlertViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rt2-op-t2F"/>
                         <viewControllerLayoutGuide type="bottom" id="q3d-9P-FB5"/>
@@ -149,56 +149,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1y-s7-bF6">
-                                <rect key="frame" x="30" y="218" width="260" height="133"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1y-s7-bF6">
+                                <rect key="frame" x="30" y="187" width="260" height="195"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-dM-y21">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-dM-y21">
                                         <rect key="frame" x="14" y="14" width="232" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-xA-TS2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-xA-TS2">
                                         <rect key="frame" x="14" y="43" width="232" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iK-BT-lCx">
-                                        <rect key="frame" x="204" y="81" width="42" height="38"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                        <state key="normal" title="Got it!">
-                                            <color key="titleColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="149" width="260" height="46"/>
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="14"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="tapPositiveButton:" destination="51a-kv-EiD" eventType="touchUpInside" id="xV0-it-92X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPt-1O-gm7">
-                                        <rect key="frame" x="136" y="81" width="48" height="38"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapNegativeButton:" destination="51a-kv-EiD" eventType="touchUpInside" id="gjS-m2-HxU"/>
-                                        </connections>
-                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ngz-fQ-RpB">
+                                        <rect key="frame" x="106" y="81" width="48" height="48"/>
+                                        <color key="tintColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="eoZ-24-5Do"/>
+                                            <constraint firstAttribute="width" constant="48" id="lrW-U5-mDU"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="leading" secondItem="LPt-1O-gm7" secondAttribute="trailing" constant="20" id="2Aq-1u-hqX"/>
-                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="trailing" secondItem="Ydc-xA-TS2" secondAttribute="trailing" id="6gE-If-KT4"/>
-                                    <constraint firstItem="LPt-1O-gm7" firstAttribute="top" secondItem="8iK-BT-lCx" secondAttribute="top" id="Cyz-PE-RO1"/>
+                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="top" secondItem="ngz-fQ-RpB" secondAttribute="bottom" constant="20" id="5PM-F9-ZmD"/>
                                     <constraint firstItem="Ydc-xA-TS2" firstAttribute="leading" secondItem="aGa-dM-y21" secondAttribute="leading" id="DOp-ay-CZR"/>
-                                    <constraint firstAttribute="bottom" secondItem="8iK-BT-lCx" secondAttribute="bottom" constant="14" id="Mdq-aP-cPo"/>
+                                    <constraint firstItem="ngz-fQ-RpB" firstAttribute="top" secondItem="Ydc-xA-TS2" secondAttribute="bottom" constant="20" id="Ibw-GP-pi8"/>
+                                    <constraint firstAttribute="bottom" secondItem="8iK-BT-lCx" secondAttribute="bottom" id="Mdq-aP-cPo"/>
                                     <constraint firstAttribute="trailing" secondItem="aGa-dM-y21" secondAttribute="trailing" constant="14" id="SzQ-KU-K6x"/>
-                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="top" secondItem="Ydc-xA-TS2" secondAttribute="bottom" constant="20" id="X33-uN-HU8"/>
                                     <constraint firstItem="aGa-dM-y21" firstAttribute="top" secondItem="t1y-s7-bF6" secondAttribute="top" constant="14" id="XYk-cP-AjF"/>
                                     <constraint firstItem="aGa-dM-y21" firstAttribute="leading" secondItem="t1y-s7-bF6" secondAttribute="leading" constant="14" id="YjG-au-flQ"/>
+                                    <constraint firstItem="ngz-fQ-RpB" firstAttribute="centerX" secondItem="t1y-s7-bF6" secondAttribute="centerX" id="ZiP-h8-C4C"/>
+                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="leading" secondItem="t1y-s7-bF6" secondAttribute="leading" id="jfQ-JZ-b8a"/>
+                                    <constraint firstAttribute="trailing" secondItem="8iK-BT-lCx" secondAttribute="trailing" id="sKv-Cy-Gqz"/>
                                     <constraint firstItem="Ydc-xA-TS2" firstAttribute="trailing" secondItem="aGa-dM-y21" secondAttribute="trailing" id="x4Z-l1-hnI"/>
                                     <constraint firstItem="Ydc-xA-TS2" firstAttribute="top" secondItem="aGa-dM-y21" secondAttribute="bottom" constant="8" id="xhr-8c-sUy"/>
-                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="trailing" secondItem="Ydc-xA-TS2" secondAttribute="trailing" id="zjJ-UX-hYP"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -211,15 +211,15 @@
                     </view>
                     <connections>
                         <outlet property="alertView" destination="t1y-s7-bF6" id="pZW-QQ-gAy"/>
+                        <outlet property="imageView" destination="ngz-fQ-RpB" id="es8-ke-fZP"/>
                         <outlet property="messageLabel" destination="Ydc-xA-TS2" id="ku7-7F-BbD"/>
-                        <outlet property="negButton" destination="LPt-1O-gm7" id="gp0-lZ-84S"/>
                         <outlet property="posButton" destination="8iK-BT-lCx" id="Dgi-DM-nMM"/>
                         <outlet property="titleLabel" destination="aGa-dM-y21" id="Jm2-xM-TQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ks-Zv-9tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="120"/>
+            <point key="canvasLocation" x="893" y="37"/>
         </scene>
     </scenes>
 </document>

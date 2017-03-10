@@ -34,9 +34,10 @@ class ViewController: UIViewController {
         alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
     }
     
-    @IBAction func openAlertWithScaleAnimation(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Scale Animation", message: "Default animation of CPAlertViewController", animationType: .scale)
+    @IBAction func openCustomStyleAlert(_ sender: Any) {
+        _ = CustomAlertVC.show(in: self, title: "Success", message: "Have a nice day !", image: #imageLiteral(resourceName: "ic_check"))
     }
+
     @IBAction func openAlertWithRotateAnimation(_ sender: Any) {
         alertVC = CPAlertVC.show(in: self, title: "Rotate Animation", message: "Rotate ~90 degrees = 1.5 rad (1 rad = 57 degrees), you can change it in CPAlertVC.swift.", animationType: .rotate)
     }

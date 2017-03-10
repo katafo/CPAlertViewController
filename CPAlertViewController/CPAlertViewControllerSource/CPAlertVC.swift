@@ -43,8 +43,10 @@ class CPAlertVC: UIViewController {
         super.viewDidLoad()
         alertView.alpha = 0
         alertView.layer.cornerRadius = 4
-        negButton.isHidden = true
         view.backgroundColor = backgroundColor.withAlphaComponent(backgroundOpacity)
+        if negButton != nil{
+            negButton.isHidden = true
+        }
     }
     
     //MARK: - CONFIG
@@ -96,6 +98,7 @@ class CPAlertVC: UIViewController {
             posButton.setTitle(action.title, for: .normal)
             posHandler = action.handler
         case .cancel:
+            guard negButton != nil else { return }
             negButton.isHidden = false
             negButton.setTitle(action.title, for: .normal)
             negHandler = action.handler
