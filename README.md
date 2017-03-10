@@ -3,6 +3,7 @@
 A way to create a custom alert view with animation. Easy custom any other alert view base on CPAlertVC.swift and storyboard.</br><br>
 
 <img src="https://github.com/katafo/CPAlertViewController/blob/master/screenshot.gif" />
+<img src="https://github.com/katafo/CPAlertViewController/blob/master/screenshot_custom_style.png" />
 </br><br>
 
 # Usage
