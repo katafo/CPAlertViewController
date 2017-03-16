@@ -108,16 +108,17 @@ class CPAlertVC: UIViewController {
     //MARK: - ACTION
     
     @IBAction func tapPositiveButton(_ sender: Any) {
-        if let posHandler = posHandler{
-            posHandler()
-        }
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: {
+            if let posHandler = self.posHandler{
+                posHandler()
+            }
+        })
     }
     @IBAction func tapNegativeButton(_ sender: Any) {
-        if let negHandler = negHandler{
-            negHandler()
-        }
-        dismiss(animated: true, completion: nil)
-
+        dismiss(animated: true, completion: {
+            if let negHandler = self.negHandler{
+                negHandler()
+            }
+        })
     }
 }
