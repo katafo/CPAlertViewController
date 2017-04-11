@@ -23,11 +23,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openNormalAlert(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Normal Alert", message: "Normal alert will have only one button.")
+        alertVC = CPAlertVC.show(title: "Normal Alert", message: "Normal alert will have only one button.")
     }
 
     @IBAction func openAlertWithAction(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
+        alertVC = CPAlertVC.show(title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
         alertVC.addAction(CPAlertAction(title: "OK", type: .normal, handler: {
             print("Tapped OK button")
         }))
@@ -35,17 +35,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openCustomStyleAlert(_ sender: Any) {
-        _ = CustomAlertVC.show(in: self, title: "Success", message: "Have a nice day !", image: #imageLiteral(resourceName: "ic_check"))
+        _ = CustomAlertVC.show(title: "Success", message: "Have a nice day !", image: #imageLiteral(resourceName: "ic_check"))
     }
 
     @IBAction func openAlertWithRotateAnimation(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Rotate Animation", message: "Rotate ~90 degrees = 1.5 rad (1 rad = 57 degrees), you can change it in CPAlertVC.swift.", animationType: .rotate)
+        alertVC = CPAlertVC.show(title: "Rotate Animation", message: "Rotate ~90 degrees = 1.5 rad (1 rad = 57 degrees), you can change it in CPAlertVC.swift.", animationType: .rotate)
     }
     @IBAction func openAlertWithBounceUpAnimation(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Bounce Up Animation", message: "Animating alert from bottom view to top view", animationType: .bounceUp)
+        alertVC = CPAlertVC.show(title: "Bounce Up Animation", message: "Animating alert from bottom view to top view", animationType: .bounceUp)
     }
     @IBAction func openAlertWithBounceDownAniamtion(_ sender: Any) {
-        alertVC = CPAlertVC.show(in: self, title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
+        alertVC = CPAlertVC.show(title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
     }
     
 }

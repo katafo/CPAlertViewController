@@ -18,7 +18,7 @@ class CustomAlertVC: CPAlertVC {
     
     // Add image argument when show popup
     
-    class func show(in viewController: UIViewController, title: String, message: String, animationType: CPAlertAnimationType = .scale, image: UIImage) -> CPAlertVC{
+    class func show(title: String, message: String, animationType: CPAlertAnimationType = .scale, image: UIImage) -> CPAlertVC{
         
         let alertStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CustomAlertVC") as! CustomAlertVC
@@ -26,12 +26,16 @@ class CustomAlertVC: CPAlertVC {
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext
         
-        viewController.present(alertVC, animated: false, completion: {
-            alertVC.imageView.image = image
-            alertVC.startAnimated(type: animationType)
-            alertVC.titleLabel.text = title
-            alertVC.messageLabel.text = message
-        })
+        if let viewController = alertVC.getTopVC(){
+        
+            viewController.present(alertVC, animated: false, completion: {
+                alertVC.imageView.image = image
+                alertVC.startAnimated(type: animationType)
+                alertVC.titleLabel.text = title
+                alertVC.messageLabel.text = message
+            })
+            
+        }
         
         return alertVC
         

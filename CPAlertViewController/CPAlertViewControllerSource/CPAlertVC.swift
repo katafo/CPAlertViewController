@@ -51,7 +51,7 @@ class CPAlertVC: UIViewController {
     
     //MARK: - CONFIG
     
-    class func show(in viewController: UIViewController, title: String, message: String, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
+    class func show(title: String, message: String, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
         
         let alertStoryboard = UIStoryboard(name: "CPAlert", bundle: nil)
         let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CPAlertVC") as! CPAlertVC
@@ -59,16 +59,33 @@ class CPAlertVC: UIViewController {
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext
         
-        viewController.present(alertVC, animated: false, completion: {
+        if let viewController = alertVC.getTopVC(){
             
-            alertVC.startAnimated(type: animationType)
-            alertVC.titleLabel.text = title
-            alertVC.messageLabel.text = message
-        
-        })
+            viewController.present(alertVC, animated: false, completion: {
+                alertVC.startAnimated(type: animationType)
+                alertVC.titleLabel.text = title
+                alertVC.messageLabel.text = message
+            })
+            
+        }
         
         return alertVC
         
+    }
+    
+    func getTopVC(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?{
+        if let navigationController = controller as? UINavigationController{
+            return getTopVC(controller: navigationController)
+        }
+        if let tabController = controller as? UITabBarController{
+            if let selectedVC = tabController.selectedViewController{
+                return getTopVC(controller: selectedVC)
+            }
+        }
+        if let presentedVC = controller?.presentedViewController{
+            return getTopVC(controller: presentedVC)
+        }
+        return controller
     }
 
     func startAnimated(type: CPAlertAnimationType){
