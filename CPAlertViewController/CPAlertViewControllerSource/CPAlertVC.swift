@@ -74,18 +74,32 @@ class CPAlertVC: UIViewController {
     }
     
     func getTopVC(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?{
-        if let navigationController = controller as? UINavigationController{
-            return getTopVC(controller: navigationController)
+       
+        var rootVC = controller
+        
+        if rootVC == nil {
+            rootVC = UIApplication.shared.keyWindow?.rootViewController
         }
-        if let tabController = controller as? UITabBarController{
-            if let selectedVC = tabController.selectedViewController{
-                return getTopVC(controller: selectedVC)
+        
+        if rootVC?.presentedViewController == nil {
+            return rootVC
+        }
+        
+        if let presented = rootVC?.presentedViewController {
+            if presented.isKind(of: UINavigationController.self) {
+                let navigationController = presented as! UINavigationController
+                return navigationController.viewControllers.last!
             }
+            
+            if presented.isKind(of: UITabBarController.self) {
+                let tabBarController = presented as! UITabBarController
+                return tabBarController.selectedViewController!
+            }
+            
+            return getTopVC(controller: presented)
         }
-        if let presentedVC = controller?.presentedViewController{
-            return getTopVC(controller: presentedVC)
-        }
-        return controller
+        return nil
+        
     }
 
     func startAnimated(type: CPAlertAnimationType){
