@@ -59,7 +59,7 @@ class CPAlertVC: UIViewController {
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext
         
-        if let viewController = alertVC.getTopVC(){
+        if let viewController = alertVC.getCurrentVC(){
             
             viewController.present(alertVC, animated: false, completion: {
                 alertVC.startAnimated(type: animationType)
@@ -73,7 +73,7 @@ class CPAlertVC: UIViewController {
         
     }
     
-    func getTopVC(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?{
+    func getCurrentVC(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?{
        
         var rootVC = controller
         
@@ -85,19 +85,21 @@ class CPAlertVC: UIViewController {
             return rootVC
         }
         
-        if let presented = rootVC?.presentedViewController {
-            if presented.isKind(of: UINavigationController.self) {
-                let navigationController = presented as! UINavigationController
+        if let presentedVC = rootVC?.presentedViewController {
+            
+            if presentedVC.isKind(of: UINavigationController.self) {
+                let navigationController = presentedVC as! UINavigationController
                 return navigationController.viewControllers.last!
             }
             
-            if presented.isKind(of: UITabBarController.self) {
-                let tabBarController = presented as! UITabBarController
+            if presentedVC.isKind(of: UITabBarController.self) {
+                let tabBarController = presentedVC as! UITabBarController
                 return tabBarController.selectedViewController!
             }
             
-            return getTopVC(controller: presented)
+            return getCurrentVC(controller: presentedVC)
         }
+        
         return nil
         
     }
