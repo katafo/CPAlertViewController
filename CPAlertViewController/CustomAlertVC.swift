@@ -26,7 +26,7 @@ class CustomAlertVC: CPAlertVC {
         alertVC.modalTransitionStyle = .crossDissolve
         alertVC.modalPresentationStyle = .overCurrentContext
         
-        if let viewController = alertVC.getTopVC(){
+        if let viewController = alertVC.getCurrentVC(){
         
             viewController.present(alertVC, animated: false, completion: {
                 alertVC.imageView.image = image
