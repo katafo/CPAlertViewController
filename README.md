@@ -44,7 +44,7 @@ alertVC.show(into: self)
   .bounceUp
   .bounceDown
   
-  Just added animationType in CPAlertVC.show function
+  Just added animationType in config() function
 
 */
 
