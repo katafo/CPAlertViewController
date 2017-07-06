@@ -14,30 +14,30 @@ class CustomAlertVC: CPAlertVC {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var imgLogo: UIImage?
+    
     //MARK: - CONFIG
     
-    // Add image argument when show popup
-    
-    class func show(title: String, message: String, animationType: CPAlertAnimationType = .scale, image: UIImage) -> CPAlertVC{
+    override class func create() -> CustomAlertVC{
         
         let alertStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CustomAlertVC") as! CustomAlertVC
         
-        alertVC.modalTransitionStyle = .crossDissolve
-        alertVC.modalPresentationStyle = .overCurrentContext
-        
-        if let viewController = alertVC.getCurrentVC(){
-        
-            viewController.present(alertVC, animated: false, completion: {
-                alertVC.imageView.image = image
-                alertVC.startAnimated(type: animationType)
-                alertVC.titleLabel.text = title
-                alertVC.messageLabel.text = message
-            })
-            
-        }
-        
         return alertVC
+        
+    }
+    
+    func showCheckImage(_ isCheck: Bool){
+        
+        imgLogo = (isCheck) ? #imageLiteral(resourceName: "ic_check") : #imageLiteral(resourceName: "ic_music")
+        
+    }
+    
+    /// Custom your UI in here
+
+    override func customizeUI() {
+        
+        self.imageView.image = imgLogo
         
     }
     

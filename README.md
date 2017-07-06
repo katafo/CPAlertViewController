@@ -12,20 +12,25 @@ A way to create a custom alert view with animation. Easy custom any other alert 
 
 ```swift
 
-var alertVC: CPAlertVC!
-
-alertVC = CPAlertVC.show(title: "Normal Alert", message: "Normal alert will have only one button.")
+let alertVC = CPAlertVC.create().config(title: "Normal Alert", message: "Normal alert will have only one button.")
+alertVC.show(into: self)
 
 ```
 - Alert with action
 
 ```swift
 
-alertVC = CPAlertVC.show(title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
+let alertVC = CPAlertVC.create().config(title: "Action Alert", message: "You can add your action to two buttons below. By default: Cancel button will dismiss alert.")
+
 alertVC.addAction(CPAlertAction(title: "OK", type: .normal, handler: {
     print("Tapped OK button")
 }))
-alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
+
+alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: {
+    print("Tapped Cancel button")
+}))
+
+alertVC.show(into: self)
     
 ```
 - Alert with other animation
@@ -39,13 +44,43 @@ alertVC.addAction(CPAlertAction(title: "CANCEL", type: .cancel, handler: nil))
   .bounceUp
   .bounceDown
   
-  You just add animationType in CPAlertVC.show function
+  Just added animationType in CPAlertVC.show function
 
 */
 
-alertVC = CPAlertVC.show(title: "Bounce Down Animation", message: "Animating alert from top view to bottom view", animationType: .bounceDown)
+let alertVC = CPAlertVC.create().config(title: "Rotate Animation", message: "Rotate ~90 degrees = 1.5 rad (1 rad = 57 degrees), you can change it in CPAlertVC.swift.", animationType: .rotate)
+alertVC.show(into: self)
 
 ```
+
+```swift
+
+/** Customize style
+     ________________________________
+    |                    |           |
+    | Properties         |  Default  |
+    |____________________|___________|
+    |                    |           |
+    | backgroundOpacity  |    0.5    |
+    | backgroundColor    |    black  |
+    | animateDuration    |    0.5    |
+    |                    |           |
+    | scaleX             |    0.3    |
+    | scaleY             |    1.5    |
+    |                    |           |
+    | rotateRadian       |    1.5    |
+    | springWithDamping  |    0.7    |
+    | delay              |    0      |
+     --------------------------------
+*/
+
+let alertVC = CPAlertVC.create().config(title: "Bounce Up Animation", message: "Animating alert from bottom view to top view", animationType: .bounceUp)
+alertVC.springWithDamping = 0.75
+alertVC.animateDuration = 0.5
+alertVC.show(into: self)
+
+```
+
 
 # Contact
 
