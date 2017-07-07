@@ -35,8 +35,9 @@ class CustomAlertVC: CPAlertVC {
     
     /// Custom your UI in here
 
-    override func customizeUI() {
+    override func configUI() {
         
+        super.configUI()
         self.imageView.image = imgLogo
         
     }

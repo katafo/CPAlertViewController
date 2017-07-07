@@ -85,16 +85,21 @@ class CPAlertVC: UIViewController {
     }
     
     
-    func show(into viewController: ViewController){
+    func show(into viewController: UIViewController){
         
         viewController.present(self, animated: false, completion: {
             self.setupButton()
-            self.customizeUI()
+            self.configUI()
         })
         
     }
     
-    func customizeUI(){}
+    func configUI(){
+    
+        self.titleLabel.text = titleMessage
+        self.messageLabel.text = message
+
+    }
     
     private func setupButton(){
         
