@@ -85,7 +85,7 @@ class CPAlertVC: UIViewController {
     }
     
     
-    func show(into viewController: ViewController){
+    func show(into viewController: UIViewController){
         
         viewController.present(self, animated: false, completion: {
             self.setupButton()
