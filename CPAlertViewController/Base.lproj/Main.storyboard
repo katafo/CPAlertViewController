@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -140,83 +140,7 @@
         <!--Custom AlertVC-->
         <scene sceneID="9RS-r1-GKN">
             <objects>
-                <viewController storyboardIdentifier="CustomAlertVC" id="51a-kv-EiD" customClass="CustomAlertVC" customModule="CPAlertViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rt2-op-t2F"/>
-                        <viewControllerLayoutGuide type="bottom" id="q3d-9P-FB5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Ww-Wl-y8N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1y-s7-bF6">
-                                <rect key="frame" x="30" y="187" width="260" height="195"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-dM-y21">
-                                        <rect key="frame" x="14" y="14" width="232" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydc-xA-TS2">
-                                        <rect key="frame" x="14" y="43" width="232" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iK-BT-lCx">
-                                        <rect key="frame" x="0.0" y="149" width="260" height="46"/>
-                                        <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="14"/>
-                                        <state key="normal" title="OK">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapPositiveButton:" destination="51a-kv-EiD" eventType="touchUpInside" id="xV0-it-92X"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ngz-fQ-RpB">
-                                        <rect key="frame" x="106" y="81" width="48" height="48"/>
-                                        <color key="tintColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="eoZ-24-5Do"/>
-                                            <constraint firstAttribute="width" constant="48" id="lrW-U5-mDU"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="top" secondItem="ngz-fQ-RpB" secondAttribute="bottom" constant="20" id="5PM-F9-ZmD"/>
-                                    <constraint firstItem="Ydc-xA-TS2" firstAttribute="leading" secondItem="aGa-dM-y21" secondAttribute="leading" id="DOp-ay-CZR"/>
-                                    <constraint firstItem="ngz-fQ-RpB" firstAttribute="top" secondItem="Ydc-xA-TS2" secondAttribute="bottom" constant="20" id="Ibw-GP-pi8"/>
-                                    <constraint firstAttribute="bottom" secondItem="8iK-BT-lCx" secondAttribute="bottom" id="Mdq-aP-cPo"/>
-                                    <constraint firstAttribute="trailing" secondItem="aGa-dM-y21" secondAttribute="trailing" constant="14" id="SzQ-KU-K6x"/>
-                                    <constraint firstItem="aGa-dM-y21" firstAttribute="top" secondItem="t1y-s7-bF6" secondAttribute="top" constant="14" id="XYk-cP-AjF"/>
-                                    <constraint firstItem="aGa-dM-y21" firstAttribute="leading" secondItem="t1y-s7-bF6" secondAttribute="leading" constant="14" id="YjG-au-flQ"/>
-                                    <constraint firstItem="ngz-fQ-RpB" firstAttribute="centerX" secondItem="t1y-s7-bF6" secondAttribute="centerX" id="ZiP-h8-C4C"/>
-                                    <constraint firstItem="8iK-BT-lCx" firstAttribute="leading" secondItem="t1y-s7-bF6" secondAttribute="leading" id="jfQ-JZ-b8a"/>
-                                    <constraint firstAttribute="trailing" secondItem="8iK-BT-lCx" secondAttribute="trailing" id="sKv-Cy-Gqz"/>
-                                    <constraint firstItem="Ydc-xA-TS2" firstAttribute="trailing" secondItem="aGa-dM-y21" secondAttribute="trailing" id="x4Z-l1-hnI"/>
-                                    <constraint firstItem="Ydc-xA-TS2" firstAttribute="top" secondItem="aGa-dM-y21" secondAttribute="bottom" constant="8" id="xhr-8c-sUy"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.40000718940000002" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="t1y-s7-bF6" firstAttribute="centerY" secondItem="6Ww-Wl-y8N" secondAttribute="centerY" id="JUs-Fz-S2M"/>
-                            <constraint firstItem="t1y-s7-bF6" firstAttribute="leading" secondItem="6Ww-Wl-y8N" secondAttribute="leading" constant="30" id="MjU-bW-nmr"/>
-                            <constraint firstItem="t1y-s7-bF6" firstAttribute="centerX" secondItem="6Ww-Wl-y8N" secondAttribute="centerX" id="OLE-lK-YMg"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="alertView" destination="t1y-s7-bF6" id="pZW-QQ-gAy"/>
-                        <outlet property="imageView" destination="ngz-fQ-RpB" id="es8-ke-fZP"/>
-                        <outlet property="messageLabel" destination="Ydc-xA-TS2" id="ku7-7F-BbD"/>
-                        <outlet property="posButton" destination="8iK-BT-lCx" id="Dgi-DM-nMM"/>
-                        <outlet property="titleLabel" destination="aGa-dM-y21" id="Jm2-xM-TQE"/>
-                    </connections>
-                </viewController>
+                <viewController storyboardIdentifier="CustomAlertVC" id="51a-kv-EiD" customClass="CustomAlertVC" customModule="CPAlertViewController" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ks-Zv-9tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893" y="37"/>

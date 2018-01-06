@@ -37,14 +37,25 @@ class CPAlertVC: UIViewController {
     var springWithDamping: CGFloat = 0.7
     var delay: TimeInterval = 0
     
-    private var titleMessage: String = ""
-    private var message: String = ""
-    private var animationType: CPAlertAnimationType = .scale
+    var titleMessage: String = ""
+    var message: String = ""
+    var animationType: CPAlertAnimationType = .scale
     
     private var negativeAction: CPAlertAction?
     private var positiveAction: CPAlertAction?
     
     //MARK: - LIFECYCLE
+    
+    convenience init(title: String, message: String, animationType: CPAlertAnimationType = .scale) {
+       
+        self.init()
+        self.modalTransitionStyle = .crossDissolve
+        self.modalPresentationStyle = .overCurrentContext
+        self.titleMessage = title
+        self.message = message
+        self.animationType = animationType
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,29 +74,7 @@ class CPAlertVC: UIViewController {
     
     //MARK: - CONFIG
     
-    class func create() -> CPAlertVC{
-        
-        let alertStoryboard = UIStoryboard(name: "CPAlert", bundle: nil)
-        let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CPAlertVC") as! CPAlertVC
-
-        return alertVC
-        
-    }
-    
-    func config(title: String, message: String, animationType: CPAlertAnimationType = .scale) -> CPAlertVC{
-        
-        self.modalTransitionStyle = .crossDissolve
-        self.modalPresentationStyle = .overCurrentContext
-        self.titleMessage = title
-        self.message = message
-        self.animationType = animationType
-        
-        return self
-        
-    }
-    
-    
-    func show(into viewController: UIViewController?){
+    func show(into viewController: UIViewController?) {
         
         guard let viewController = viewController else { return }
         
@@ -96,14 +85,16 @@ class CPAlertVC: UIViewController {
         
     }
     
-    func configUI(){
+    /// Bind data to UI elements
+    
+    func configUI() {
     
         self.titleLabel.text = titleMessage
         self.messageLabel.text = message
 
     }
     
-    private func setupButton(){
+    private func setupButton() {
         
         if let posAction = self.positiveAction{
             self.posButton.setTitle(posAction.title, for: .normal)
@@ -116,7 +107,7 @@ class CPAlertVC: UIViewController {
         
     }
 
-    private func startAnimating(type: CPAlertAnimationType){
+    private func startAnimating(type: CPAlertAnimationType) {
         
         alertView.alpha = 1
         switch type {
@@ -137,7 +128,7 @@ class CPAlertVC: UIViewController {
         
     }
     
-    func addAction(_ action: CPAlertAction){
+    func addAction(_ action: CPAlertAction) {
         switch action.type{
         case .normal:
             positiveAction = action

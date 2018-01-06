@@ -13,24 +13,12 @@ class CustomAlertVC: CPAlertVC {
     //MARK: - DECLARE
     
     @IBOutlet weak var imageView: UIImageView!
-    
     var imgLogo: UIImage?
     
     //MARK: - CONFIG
     
-    override class func create() -> CustomAlertVC{
-        
-        let alertStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let alertVC = alertStoryboard.instantiateViewController(withIdentifier: "CustomAlertVC") as! CustomAlertVC
-        
-        return alertVC
-        
-    }
-    
-    func showCheckImage(_ isCheck: Bool){
-        
-        imgLogo = (isCheck) ? #imageLiteral(resourceName: "ic_check") : #imageLiteral(resourceName: "ic_music")
-        
+    func showCheckImage(_ isCheck: Bool) {
+        imgLogo = (isCheck) ? #imageLiteral(resourceName: "ic_check") : #imageLiteral(resourceName: "ic_music")    
     }
     
     /// Custom your UI in here
