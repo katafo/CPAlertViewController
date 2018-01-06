@@ -16,7 +16,7 @@ enum CPAlertAnimationType{
 }
 
 class CPAlertVC: UIViewController {
-
+    
     //MARK: - DECLARE
     
     @IBOutlet weak var alertView: UIView!
@@ -41,13 +41,16 @@ class CPAlertVC: UIViewController {
     var message: String = ""
     var animationType: CPAlertAnimationType = .scale
     
+    var cornerRadius: CGFloat = 4
+    var alpha: CGFloat = 0
+    
     private var negativeAction: CPAlertAction?
     private var positiveAction: CPAlertAction?
     
     //MARK: - LIFECYCLE
     
     convenience init(title: String, message: String, animationType: CPAlertAnimationType = .scale) {
-       
+        
         self.init()
         self.modalTransitionStyle = .crossDissolve
         self.modalPresentationStyle = .overCurrentContext
@@ -58,13 +61,16 @@ class CPAlertVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        alertView.alpha = 0
-        alertView.layer.cornerRadius = 4
+        
+        alertView.alpha = alpha
+        alertView.layer.cornerRadius = cornerRadius
+        
         view.backgroundColor = backgroundColor.withAlphaComponent(backgroundOpacity)
-        if negButton != nil{
-            negButton.isHidden = true
-        }
+        setupButton()
+        setupUI()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,36 +83,39 @@ class CPAlertVC: UIViewController {
     func show(into viewController: UIViewController?) {
         
         guard let viewController = viewController else { return }
-        
-        viewController.present(self, animated: false, completion: {
-            self.setupButton()
-            self.configUI()
-        })
+        viewController.present(self, animated: false, completion: nil)
         
     }
     
-    /// Bind data to UI elements
-    
-    func configUI() {
-    
-        self.titleLabel.text = titleMessage
-        self.messageLabel.text = message
-
+    private func setupUI() {
+        
+        if titleLabel != nil {
+            titleLabel.text = titleMessage
+        }
+        
+        if messageLabel != nil {
+            messageLabel.text = message
+        }
+        
     }
     
     private func setupButton() {
         
-        if let posAction = self.positiveAction{
+        if let posAction = self.positiveAction {
             self.posButton.setTitle(posAction.title, for: .normal)
         }
         
-        if let negAction = self.negativeAction{
+        if negButton != nil {
+            negButton.isHidden = true
+        }
+        
+        if let negAction = self.negativeAction {
             self.negButton.isHidden = false
             self.negButton.setTitle(negAction.title, for: .normal)
         }
         
     }
-
+    
     private func startAnimating(type: CPAlertAnimationType) {
         
         alertView.alpha = 1
@@ -154,3 +163,4 @@ class CPAlertVC: UIViewController {
         })
     }
 }
+

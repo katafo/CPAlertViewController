@@ -15,19 +15,15 @@ class CustomAlertVC: CPAlertVC {
     @IBOutlet weak var imageView: UIImageView!
     var imgLogo: UIImage?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.imageView.image = imgLogo
+    }
+    
     //MARK: - CONFIG
     
     func showCheckImage(_ isCheck: Bool) {
         imgLogo = (isCheck) ? #imageLiteral(resourceName: "ic_check") : #imageLiteral(resourceName: "ic_music")    
-    }
-    
-    /// Custom your UI in here
-
-    override func configUI() {
-        
-        super.configUI()
-        self.imageView.image = imgLogo
-        
     }
     
 }
